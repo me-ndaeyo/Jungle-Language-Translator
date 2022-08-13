@@ -1,154 +1,58 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jungle Language Translator</title>
-    <style>
-        /* .image_box{
-            width: 90vw;
-            display: flex;
-            margin: 0 auto;
-        }
-        .panel{
-            height: 30rem;
-            flex: 0.5;
-            background-size: cover;
-            background-repeat: no-repeat;  
-            position: relative;
-            border-radius: 16px;
-            margin: 8px;
-            color: white;
-            cursor: pointer;
-            font-family: 'Montserrat', sans-serif;
-            transition: all 1.8s ease-in-out;
-        }
-        .panel h3{
-            position: absolute;
-            left: 20px;
-            bottom: 0;
-            opacity: 0;
-        }
+    <!-- CSS -->
+    <link rel="stylesheet" href="/style.css">
 
-        .panel.active{
-            flex: 3;
-        }
-        .panel.active h3{
-            opacity: 1;
-            transition: opacity 0.8s ease-in 1s;
-        } */
-
-        body{
-            margin: 0;
-            background-color: lavender;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;
-        }
-        .text_box{
-            height: 55vh;
-            width: 100vw;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem auto;
-            position: relative;
-        }
-        .textarea_box{
-            display: flex;
-            flex-direction: column;
-        }
-        .textarea_box label{
-            margin-left: 1.5rem;
-        }
-        .textarea{
-            height: 50%;
-            width: 80%;
-            padding: 1rem;
-            margin: 1rem 1.5rem;
-            border-radius: 10px 30px;
-            border: 1px solid #fff;
-            color: #fff;
-            background-color: black;
-        }
-        nav{
-            display: flex;
-            height: 10vh;
-            width: 100vw;
-            align-items: center;
-            justify-content: space-evenly;
-        }
-        button{
-            background-color: #222;
-            color: #fff;
-            height: 2rem;
-            width: 5.5rem;
-            border-radius: 4px 12px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: none;
-        }
-        button:active{
-            transform: scale(0.97, 0.97);
-        }
-        .translate{
-            position: absolute;
-            border: 1px solid;
-            color: black;
-            background-color: lavender;
-        }
-        .toggle{
-            display: none;
-        }
-        
-    </style>
 </head>
 <body>
-    <!-- <div class="image_box">
-        <div class="panel active" style="background-image: url('/burj.jpg');">
-            <h3>United Arab Emirates</h3>
+    <!-- LANDING PAGE -->
+    <main class="landing">
+        <div class="intro">
+            <h1>hEllo stRangEr!</h1>
+            <p>Welcome to the language jungle. Before you use the Jungle Language Translator, we would like to know your name.</p> <br>
+            <div class="intro_name">
+                <input type="text" class="name" placeholder="Type your name here...">
+            </div>
+            <button class="proceed">Proceed</button>
         </div>
-        <div class="panel" style="background-image: url('/canada.jpg');">
-            <h3>Canada</h3>
+    </main>
+    <!-- TRANSLATOR BOX -->
+    <main class="translator hide">
+        <div class="intro">
+            <p class="intro_header"> </p>
         </div>
-        <div class="panel" style="background-image: url('/capetown.jpg');">
-            <h3>Capetown</h3>
-        </div>
-        <div class="panel" style="background-image: url('/china-town.jpg');">
-            <h3>China-town</h3>
-        </div>
-        <div class="panel" style="background-image: url('/london.jpg');">
-            <h3>London</h3>
-        </div>
-    </div> -->
-    <nav>
-        <button class="eng">To English</button>
-        <button class="jun">To Jungle</button>
-    </nav>
+        <div class="translation_box">
+            <nav>
+                <button class="eng toggle">Switch to Jungle Mode</button>
+                <button class="jun">Switch to English Mode</button>
+            </nav>
 
-    <div class="text_box to_jungle">
-        <div class="textarea_box">
-            <label for="">English:</label>
-            <textarea name="English" id="english" class="textarea" cols="40" rows="13"></textarea>
-        </div>
-        <button class="translate jungle_translate">Translate <span>⤵</span></button>
-        <div class="textarea_box">
-            <label for="">Jungle:</label>
-            <textarea name="jungle" id="jungle" class="textarea" cols="40" rows="13"></textarea>
-        </div>        
-    </div>
+            <div class="text_box to_jungle">
+                <div class="textarea_box">
+                    <textarea name="English" id="english" class="textarea" cols="40" rows="13" placeholder="What do you want to translate to jungle language?"></textarea>
+                </div>
+                <button class="translate jungle_translate">Translate <span>⤵</span></button>
+                <div class="textarea_box">
+                    <textarea name="jungle" id="jungle" class="textarea" cols="40" rows="13" disabled></textarea>
+                </div>        
+            </div>
 
-    <div class="text_box to_english toggle">
-        <div class="textarea_box">
-            <label for="">Jungle:</label>
-            <textarea name="ejungle" id="ejungle" class="textarea" cols="40" rows="13"></textarea>
+            <div class="text_box to_english toggle">
+                <div class="textarea_box">
+                    <textarea name="ejungle" id="ejungle" class="textarea" cols="40" rows="13" placeholder="What do you want to translate to english language?"></textarea>
+                </div>
+                <button class="translate english_translate">Translate <span>⤵</span></button>
+                <div class="textarea_box">
+                    <textarea name="English" id="jenglish" class="textarea" cols="40" rows="13" disabled></textarea>
+                </div>        
+            </div>
         </div>
-        <button class="translate english_translate">Translate <span>⤵</span></button>
-        <div class="textarea_box">
-            <label for="">English:</label>
-            <textarea name="English" id="jenglish" class="textarea" cols="40" rows="13"></textarea>
-        </div>        
-    </div>
-
+    </main>
     <script src="/index.js"></script>
 </body>
 </html>

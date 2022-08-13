@@ -1,0 +1,146 @@
+/* GENERAL */
+body{
+    margin: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)), url(/jungle.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: monospace;
+    color: #f8f0e5e5;
+    font-weight: bold;
+    height: 100vh;
+    width: 100vw;
+}
+main{
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+h1{
+    font-family: cursive;
+}
+.hide{
+    display: none;
+}
+button{
+    background-color: #f8f0e5e5;
+    color: black;
+    height: 2rem;
+    width: max-content;
+    padding: 0.5rem 0.7rem;
+    border-radius: 10px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    font-family: monospace;
+}
+button:active{
+    transform: scale(0.97, 0.97);
+}
+
+.name:focus, .textarea:focus{
+    outline: none;
+}
+
+/* LANDING PAGE */
+h1, .intro, .intro_name{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+.intro{
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    margin: 2.5rem auto;
+    transition: all ease-in-out 1s;
+}
+.intro>*{
+    margin: 0.5rem auto 0;
+}
+.intro_name{
+    margin: 0 auto 0.5rem;
+    width: 60%;
+    justify-content: space-around;
+}
+.name{
+    background-color: #333;
+    border: none;
+    height: 1.5rem;
+    width: max-content;
+    border-radius: 4rem;
+    color: #f8f0e5e5;
+    padding: 0.5rem 0.8rem;
+    text-align: center;
+    font-family: inherit;
+    font-size: small;
+    box-shadow: 1px 0 4px 0.5px #f8f0e5e5;
+}
+
+/* TRANSLATOR */
+
+.text_box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem auto;
+    position: relative;
+}
+.textarea_box{
+    display: flex;
+    flex-direction: column;
+}
+.textarea{
+    height: 50%;
+    width: 80%;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 10px 30px;
+    border: none;
+    color: #fff;
+    background-color: #000000e7;
+}
+nav{
+    display: flex;
+    height: 10vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.toggle{
+    display: none;
+}
+/* MEDIA QUERY */
+@media screen and (max-width:600px){
+    body{
+        font-size: large;
+        background-size: auto 100%;
+    }
+    h1{
+        font-size: 2rem;
+    }
+    button{
+        height: 2.3rem;
+        font-size: large;
+    }
+    .intro{
+        width: 85%;
+    }
+    .name{
+        height: 1rem;
+    }
+    .text_box{
+        flex-direction: column;
+    }
+    .textarea{
+        height: 15rem;
+        width: 20rem;
+    }
+}
+        

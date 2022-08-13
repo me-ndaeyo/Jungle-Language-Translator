@@ -15,6 +15,13 @@ let to_english = document.querySelector(".to_english");
 let to_jungle = document.querySelector(".to_jungle");
 let eng = document.querySelector(".eng");
 let jun = document.querySelector(".jun");
+let introHeader = document.querySelector('.intro_header');
+let translatorPage = document.querySelector('.translator');
+let landingPage = document.querySelector('.landing');
+let userName = document.querySelector('.name');
+let proceed = document.querySelector('.proceed');
+let translationBox = document.querySelector('.translation_box');
+
 
 english_translate.addEventListener("click", () => {
   englishTranslator(ejungle.value);
@@ -25,12 +32,24 @@ jungle_translate.addEventListener("click", () => {
 });
 
 jun.addEventListener("click", function () {
-  to_jungle.classList.remove("toggle");
-  to_english.classList.add("toggle");
+  to_jungle.classList.add("toggle");
+  jun.classList.add('toggle');
+  to_english.classList.remove("toggle");
+  eng.classList.remove('toggle');
 });
 eng.addEventListener("click", function () {
-  to_english.classList.remove("toggle");
-  to_jungle.classList.add("toggle");
+  to_english.classList.add("toggle");
+  eng.classList.add('toggle');
+  to_jungle.classList.remove("toggle");
+  jun.classList.remove('toggle');
+});
+
+proceed.addEventListener("click", function () {
+  if(userName.value && userName.value.length <=20){
+    landingPage.classList.add("hide")
+    translatorPage.classList.remove("hide");
+    return (introHeader.textContent = `Heads up ${userName.value}! Make sure you have fun while translating.😉`);
+  }
 });
 
 const englishTranslator = (function (str) {
