@@ -18,10 +18,14 @@ main{
     display: flex;
     flex-direction: column;
 }
-
 h1{
-    font-family: cursive;
+    border: 1px inset;
+    box-shadow: 0.5px 0 4px 0.5px #f8f0e5e5;
+    padding: 0 0.3rem;
+    border-radius: 6px 15px;
+    margin-bottom: 1.5rem !important;
 }
+
 .hide{
     display: none;
 }
@@ -62,7 +66,7 @@ h1, .intro, .intro_name{
     transition: all ease-in-out 1s;
 }
 .intro>*{
-    margin: 0.5rem auto 0;
+    margin: 0.5rem auto;
 }
 .intro_name{
     margin: 0 auto 0.5rem;
@@ -97,8 +101,8 @@ h1, .intro, .intro_name{
     flex-direction: column;
 }
 .textarea{
-    height: 50%;
-    width: 80%;
+    height: 15rem;
+    width: 20rem;
     padding: 1rem;
     margin: 1rem;
     border-radius: 10px 30px;
@@ -139,8 +143,8 @@ nav{
         flex-direction: column;
     }
     .textarea{
-        height: 15rem;
-        width: 20rem;
+        height: 10rem;
+        width: 15rem;
     }
 }
         
