@@ -24,11 +24,11 @@ let translationBox = document.querySelector('.translation_box');
 
 
 english_translate.addEventListener("click", () => {
-  englishTranslator(ejungle.value);
+  englishTranslator(ejungle.value, jenglish);
 });
 
 jungle_translate.addEventListener("click", () => {
-  jungleLangTranslator(english.value);
+  jungleLangTranslator(english.value, jungle);
 });
 
 jun.addEventListener("click", function () {
@@ -48,11 +48,13 @@ proceed.addEventListener("click", function () {
   if(userName.value && userName.value.length <=20){
     landingPage.classList.add("hide")
     translatorPage.classList.remove("hide");
-    return (introHeader.textContent = `Heads up ${userName.value}! Make sure you have fun while translating.😉`);
+    return (introHeader.textContent = `Heads up ${jungleLangTranslator(
+      userName.value
+    , console)}! Make sure you have fun while translating.😉`);
   }
 });
 
-const englishTranslator = (function (str) {
+const englishTranslator = (function (str, location) {
   // 1. Accept strings
   let strArr = str.split("");
 
@@ -75,10 +77,10 @@ const englishTranslator = (function (str) {
     if (strArr[i] === "4") strArr[i] = "o";
     if (strArr[i] === "5") strArr[i] = "u";
   }
-  return (jenglish.textContent = strArr.join(""));
+  return (location.textContent = strArr.join(""));
 })
 
-const jungleLangTranslator = (function (str) {
+const jungleLangTranslator = (function (str, location) {
   // Accept a string of words
   let strArr = str.split("");
   for (let i = 0; i < strArr.length; i++) {
@@ -119,5 +121,5 @@ const jungleLangTranslator = (function (str) {
     }
   }
 
-  return (jungle.textContent = strArr.join(""));
+  return (location.textContent = strArr.join(""));
 })

@@ -1,8 +1,8 @@
 /* GENERAL */
 body{
     margin: 0;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)), url(/jungle.jpg);
-    background-size: cover;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), url(/jungle.jpg);
+    background-size: contain;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,10 +19,7 @@ main{
     flex-direction: column;
 }
 h1{
-    border: 1px inset;
-    box-shadow: 0.5px 0 4px 0.5px #f8f0e5e5;
-    padding: 0 0.3rem;
-    border-radius: 6px 15px;
+    text-shadow: 1px 0 4px #fff;
     margin-bottom: 1.5rem !important;
 }
 
@@ -67,9 +64,6 @@ h1, .intro, .intro_name{
 }
 .intro>*{
     margin: 0.5rem auto;
-}
-.intro_header{
-    font-size: 1.3rem;
 }
 .name{
     background-color: #333;
@@ -126,7 +120,7 @@ nav{
     }
     h1{
         font-size: 1.6rem;
-        padding: 0.3rem 0.6rem;
+        padding: 0.3rem;
     }
     button{
         height: 2.3rem;
@@ -134,6 +128,9 @@ nav{
     }
     .intro{
         width: 95%;
+    }
+    .intro_header{
+        font-size: 1rem;
     }
     .name{
         height: 1.2rem;
