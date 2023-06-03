@@ -23,13 +23,21 @@ let proceed = document.querySelector('.proceed');
 let translationBox = document.querySelector('.translation_box');
 
 
-english_translate.addEventListener("click", () => {
-  englishTranslator(ejungle.value, jenglish);
-});
+// english_translate.addEventListener("click", () => {
+//   englishTranslator(ejungle.value, jenglish);
+// });
 
-jungle_translate.addEventListener("click", () => {
-  jungleLangTranslator(english.value, jungle);
-});
+// jungle_translate.addEventListener("click", () => {
+//   jungleLangTranslator(english.value, jungle);
+// });
+
+english.addEventListener("keyup", () => {
+  jungleLangTranslator(english.value, jungle)
+})
+
+ejungle.addEventListener("keyup", () => {
+  jungleLangTranslator(ejungle.value, jenglish)
+})
 
 jun.addEventListener("click", function () {
   to_jungle.classList.add("toggle");
@@ -53,6 +61,17 @@ proceed.addEventListener("click", function () {
     , console)}! Make sure you have fun while translating.😉`);
   }
 });
+userName.addEventListener("keypress", function (e){
+  console.log(e)
+  if (e.key === "Enter" && (e.target.value && e.target.value.length <= 20)) {
+    landingPage.classList.add("hide");
+    translatorPage.classList.remove("hide");
+    return (introHeader.textContent = `Heads up ${jungleLangTranslator(
+      e.target.value,
+      console
+    )}! Make sure you have fun while translating.😉`);
+  }
+})
 
 const englishTranslator = (function (str, location) {
   // 1. Accept strings
